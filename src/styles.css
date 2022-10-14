@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+
+/* variables*/
+:root{
+    --clr-bg: hsl(210, 10%, 80%);
+    --clr-bg-hf: hsl(210, 10%, 23%);
+    --clr-text: azure;
+}
+/*Global*/
+html{
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+body{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    padding:0;
+    margin:0;
+    background-color: var(--clr-bg);
+}
+main{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+p{
+    font-size: larger;
+}
+/*Header*/
+header{
+    display: flex;
+    background-color: var(--clr-bg-hf);
+    color: var(--clr-text);
+    padding: 0 1rem 0 1rem;
+    text-align: center;
+}
+header h1{
+    flex: auto;
+}
+
+/*Footer*/
+.footer-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    background-color: var(--clr-bg-hf);
+    color: var(--clr-text);
+    padding-top:1rem;
+}
+.footer-copyright{
+  width:100%;
+  padding-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}

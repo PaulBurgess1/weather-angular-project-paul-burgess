@@ -1,0 +1,108 @@
+<div class="container">
+    
+    <!--Search Box-->
+    <div class="input-group my-1">
+        <input type="text" class="form-control" placeholder="Search" [formControl]="search" (keydown.enter)="getWeather(search.value)">
+        <div class="input-group-append">
+            <button type="button" class="btn btn-primary" (click)="getWeather(search.value)">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+      </div>
+      <!--Main info-->
+      <div class="text-center rounded my-1">
+        <!--Location data-->
+        <div class="bg-info rounded border border-dark py-2">
+            <div class="row">
+                <p class="h1">
+                    {{location[0]}}, {{location[1]}}
+                </p>
+                <p class="h3">
+                    {{date[0]}}, {{date[1]}}, {{date[2]}}, {{date[3]}}
+                </p>
+            </div>
+        </div>
+        
+        <!--Weather Main-->
+        <div class="bg-dark text-light border border-light">
+            <div class="row">
+                <span class="display-1">
+                    <i [class]="icon"></i>
+                </span>
+                
+            </div>
+            <div class="row">
+                <p class="h3">
+                    {{weather[0]}}
+                </p>
+                <p>
+                    {{weather[1]}}
+                </p>
+                
+            </div>
+        </div>
+        <!--Weather Tempature-->
+        <div [ngClass]="{'bg-info': temperature[0]<0 ,'bg-primary': temperature[0] >0, 'bg-success': temperature[0] >10, 'bg-warning': temperature[0] >25, 'bg-danger': temperature[0] >35}">
+            <div class="row">
+                <p class="h3">
+                    Temperature
+                </p>
+                <div class="col h4">
+                    {{temperature[0]}}&#8451;
+                </div>
+                <div class="col h4">
+                    {{temperature[1]}}&#8457;
+                </div>
+                <div class="col h4">
+                    {{temperature[2]}}&#176;&#8490;
+                </div>
+            </div>
+        </div>
+        <!--Weather Info-->
+        <table class="table table-striped table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th colspan="2">Additional Information</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+            <tr>
+                <th>Humidity</th>
+                <td>
+                    {{information[0]}} %
+                </td>
+            </tr>
+            <tr>
+                <th>Wind Speed</th>
+                <td>
+                    {{information[1]}} 
+                    <abbr title="metre per second">m/s</abbr>
+                </td>
+            </tr>
+            <tr>
+                <th>Pressure</th>
+                <td> {{information[2]}}
+                    <abbr title="hectopascal">hPa</abbr>
+                </td>
+            </tr>
+            <tr>
+                <th>Sunrise</th>
+                <td>
+                    {{information[3]}}
+                    <abbr title="Coordinated Universal Time">UTC</abbr>
+                </td>
+            </tr>
+            <tr>
+                <th>Sunset</th>
+                <td>
+                    {{information[4]}}
+                    <abbr title="Coordinated Universal Time">UTC</abbr>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+      </div>
+      
+
+</div>
